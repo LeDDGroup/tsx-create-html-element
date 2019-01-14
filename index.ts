@@ -1,15 +1,4 @@
-declare namespace JSX {
-  type Element = string;
-  interface ElementChildrenAttribute {
-    children: any;
-  }
-  interface IntrinsicElements {
-    [element: string]: {
-      [property: string]: any;
-    };
-  }
-}
-
+/// <reference path="global.d.ts" />
 export function createElement<T extends keyof HTMLElementTagNameMap>(
   name: T,
   props: HTMLElementTagNameMap[T],
