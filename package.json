@@ -1,6 +1,6 @@
 {
   "name": "tsx-create-html-element",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create html elements from tsx sintax",
   "main": "index.js",
   "types": "index.d.ts",
