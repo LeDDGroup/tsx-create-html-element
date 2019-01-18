@@ -13,7 +13,7 @@
     "clean": "rm -f index.js index.d.ts test.js test.d.ts",
     "build": "tsc",
     "release": "standard-version",
-    "prepublish": "npm test && npm run build",
+    "prepublish": "npm run clean && npm test && npm run build",
     "test": "jest"
   },
   "jest": {
