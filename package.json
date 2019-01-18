@@ -10,16 +10,25 @@
     "index.d.ts"
   ],
   "scripts": {
+    "clean": "rm -f index.js index.d.ts test.js test.d.ts",
     "build": "tsc",
     "release": "standard-version",
-    "prepublish": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "npm test && npm run build",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^23.3.12",
+    "@types/node": "^10.12.18",
+    "jest": "^23.6.0",
     "standard-version": "^4.4.0",
+    "ts-jest": "^23.10.5",
     "typescript": "^3.2.2"
   }
 }
