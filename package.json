@@ -1,6 +1,6 @@
 {
   "name": "tsx-create-html-element",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Create html elements from tsx syntax",
   "main": "index.js",
   "types": "index.d.ts",
@@ -20,7 +20,13 @@
     "preset": "ts-jest",
     "testEnvironment": "node"
   },
-  "keywords": ["tsx", "typescript", "jsx", "dom", "createElement"],
+  "keywords": [
+    "tsx",
+    "typescript",
+    "jsx",
+    "dom",
+    "createElement"
+  ],
   "author": "Daniel Perez Alvarez <danielpza@protonmail.com>",
   "license": "ISC",
   "devDependencies": {
