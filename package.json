@@ -20,8 +20,8 @@
     "preset": "ts-jest",
     "testEnvironment": "node"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["tsx", "typescript", "jsx", "dom", "createElement"],
+  "author": "Daniel Perez Alvarez <danielpza@protonmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^23.3.12",
@@ -30,5 +30,14 @@
     "standard-version": "^4.4.0",
     "ts-jest": "^23.10.5",
     "typescript": "^3.2.2"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeDDGroup/tsx-create-html-element.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LeDDGroup/tsx-create-html-element/issues"
+  },
+  "homepage": "https://github.com/LeDDGroup/tsx-create-html-element#readme"
 }
