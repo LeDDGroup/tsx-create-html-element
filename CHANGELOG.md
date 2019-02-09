@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/LeDDGroup/tsx-create-html-element/compare/v1.2.1...v1.3.0) (2019-02-09)
+
+
+### Features
+
+* add fragment support ([ce95357](https://github.com/LeDDGroup/tsx-create-html-element/commit/ce95357))
+* support class elements ([bc752a8](https://github.com/LeDDGroup/tsx-create-html-element/commit/bc752a8))
+
+
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://github.com/LeDDGroup/tsx-create-html-element/compare/v1.2.0...v1.2.1) (2019-01-20)
 
