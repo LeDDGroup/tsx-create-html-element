@@ -1,4 +1,4 @@
-/// <reference path="global.d.ts" />
+/// <reference path="../global.d.ts" />
 
 export type Properties<P> = P & { children?: any; ref?: JSX.Reference };
 export interface FunctionElement<P> {

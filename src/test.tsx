@@ -1,3 +1,4 @@
+/* @jsx createElement */
 import { createElement } from "./index";
 
 class Element {

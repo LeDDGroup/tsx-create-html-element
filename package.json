@@ -2,16 +2,12 @@
   "name": "tsx-create-html-element",
   "version": "1.2.1",
   "description": "Create html elements from tsx syntax",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "files": [
-    "index.js",
-    "global.d.ts",
-    "index.d.ts"
-  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+    "files": ["dist", "global.d.ts"],
   "scripts": {
-    "clean": "rm -f index.js index.d.ts test.js test.d.ts",
-    "build": "tsc",
+    "clean": "rm -rf dist",
+    "build": "tsc -p tsconfig-build.json",
     "release": "standard-version",
     "prepublish": "npm run clean && npm test && npm run build",
     "test": "jest"
@@ -20,13 +16,7 @@
     "preset": "ts-jest",
     "testEnvironment": "node"
   },
-  "keywords": [
-    "tsx",
-    "typescript",
-    "jsx",
-    "dom",
-    "createElement"
-  ],
+  "keywords": ["tsx", "typescript", "jsx", "dom", "createElement"],
   "author": "Daniel Perez Alvarez <danielpza@protonmail.com>",
   "license": "ISC",
   "devDependencies": {
