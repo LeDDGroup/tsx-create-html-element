@@ -9,7 +9,8 @@
 Create html elements from tsx syntax using `document.createElement`.
 
 - Support for class elements like in React but without lifecycles or rerender
-- Support for function elements like in React
+- Support for function elements
+- Support for fragments
 
 ## Install
 

@@ -40,6 +40,10 @@ export function createElement<T extends keyof JSX.IntrinsicElements, L>(
   }
 }
 
+export function Fragment({ children }: { children?: any }) {
+  return children as Node;
+}
+
 function isClassElement<P>(
   t: FunctionElement<P> | ClassElement<P>
 ): t is ClassElement<P> {

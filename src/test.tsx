@@ -1,11 +1,11 @@
 /* @jsx createElement */
-import { createElement } from "./index";
+import { createElement, Fragment } from "./index";
 
 class Element {
   children: (Element | string)[] = [];
   constructor(public name: string) {}
-  append(child: Element | string) {
-    this.children.push(child);
+  append(...children: (Element | string)[]) {
+    this.children = this.children.concat(children);
   }
 }
 declare const global: any;
@@ -88,6 +88,29 @@ test("class", () => {
       {
         name: "h1",
         children: ["hello"]
+      }
+    ]
+  });
+});
+
+test("Fragment", () => {
+  expect(
+    <div>
+      <Fragment>
+        <div>hello</div>
+        <h1>world</h1>
+      </Fragment>
+    </div>
+  ).toMatchObject({
+    name: "div",
+    children: [
+      {
+        name: "div",
+        children: ["hello"]
+      },
+      {
+        name: "h1",
+        children: ["world"]
       }
     ]
   });
