@@ -4,9 +4,12 @@ export type Properties<P> = P & { children?: any; ref?: JSX.Reference };
 export interface FunctionElement<P> {
   (props: Properties<P>): JSX.Element;
 }
+export interface ClassElement<P> {
+  new (props: Properties<P>): { render(): JSX.Element };
+}
 
 export function createElement<T extends keyof JSX.IntrinsicElements, L>(
-  name: T | FunctionElement<L>,
+  name: T | FunctionElement<L> | ClassElement<L>,
   props: (JSX.IntrinsicElements[T]) | L,
   ...children: any[]
 ) {
@@ -21,12 +24,26 @@ export function createElement<T extends keyof JSX.IntrinsicElements, L>(
     return el;
   } else {
     const { ref, ...rest } = (props || {}) as L & { ref?: any };
-    const el = name({ ...(rest as L), children });
-    if (ref) {
-      ref.value = el;
+    if (isClassElement(name)) {
+      const el = new name({ ...(rest as L), children }).render();
+      if (ref) {
+        ref.value = el;
+      }
+      return el;
+    } else {
+      const el = name({ ...(rest as L), children });
+      if (ref) {
+        ref.value = el;
+      }
+      return el;
     }
-    return el;
   }
+}
+
+function isClassElement<P>(
+  t: FunctionElement<P> | ClassElement<P>
+): t is ClassElement<P> {
+  return "render" in t.prototype;
 }
 
 function flat(arr: any[]): any[] {

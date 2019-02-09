@@ -58,3 +58,37 @@ test("function", () => {
     ]
   });
 });
+
+test("class", () => {
+  class Layout {
+    constructor(public props: any) {}
+    render() {
+      return <div className="container">{this.props.children}</div>;
+    }
+  }
+  const ref: JSX.Reference<"div"> = {};
+  expect(
+    <Layout ref={ref}>
+      <h1>hello</h1>
+    </Layout>
+  ).toMatchObject({
+    name: "div",
+    className: "container",
+    children: [
+      {
+        name: "h1",
+        children: ["hello"]
+      }
+    ]
+  });
+  expect(ref.value).toMatchObject({
+    name: "div",
+    className: "container",
+    children: [
+      {
+        name: "h1",
+        children: ["hello"]
+      }
+    ]
+  });
+});
